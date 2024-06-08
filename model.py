@@ -165,7 +165,7 @@ class DecoderBlock(nn.Module):
         output2 = self.addnorm2(z +
                                 output1)  # x: (batch_size,seq_len,emb_size)
 
-        # 最后feedforward
+        # feedforward
         z = self.feedforward(output2)  # z: (batch_size,seq_len,emb_size)
         return self.addnorm3(z + output2)  # (batch_size,seq_len,emb_size)
 
